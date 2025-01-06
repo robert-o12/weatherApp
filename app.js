@@ -12,7 +12,7 @@ document.getElementById("get-weather").addEventListener("click", function() {
 
 function getWeather(city) {
     const apiKey = "29f102510b51cc28d501cb7765dd61fe"
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`
 
     // Make the API request
     fetch(url)
@@ -41,7 +41,7 @@ function displayWeather(data) {
 
     weatherResult.innerHTML = `
         <h2>Weather in ${data.name}</h2>
-        <p><strong>Temperature;</strong> ${temp} °C</p>
+        <p><strong>Temperature;</strong> ${temp} °F</p>
         <p><strong>Humidity:</strong> ${humidity}%</p>
         <p><strong>Description:</strong> ${description}</p>
         <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
